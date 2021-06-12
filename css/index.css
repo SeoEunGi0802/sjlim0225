@@ -1,0 +1,23 @@
+/*----------------공통 영역-------------*/
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: rgb(63, 63, 63);
+}
+/*----------------공통 영역-------------*/
+
+header {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: indianred;
+}
+
+article {
+    font-size: 20px;
+}
+
+article > div {
+    margin: 20px 0 20px 0;
+}

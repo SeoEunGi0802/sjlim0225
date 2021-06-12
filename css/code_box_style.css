@@ -1,0 +1,23 @@
+#code_box {
+    width: fit-content;
+    margin-left: 30px;
+}
+
+#code_box div {
+    color: wheat;
+    font-size: 17px;
+    display: none;
+}
+
+#code_box div:first-child {
+    display: block;
+}
+
+#code_box div p {
+    line-height: initial;
+}
+
+#code_box div p:first-child {
+    font-size: 25px;
+    border-bottom: 1px solid;
+}

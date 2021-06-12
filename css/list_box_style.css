@@ -1,0 +1,50 @@
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+#list_box {
+    width: 230px;
+}
+
+#Naver_li, #Naver_ul {
+    color: #03C75A;
+}
+
+#Naver_li {
+    margin: 10px 0 10px 0;
+}
+
+#Naver_ul {
+    margin-left: 20px;
+    display: none;
+}
+
+#Naver_ul span {
+    display: none;
+}
+
+#Naver_ul li {
+    height: 30px;
+}
+
+#Kakao_li, #Kakao_ul {
+    color: #FEE500;
+}
+
+#Kakao_li {
+    margin: 10px 0 10px 0;
+}
+
+#Kakao_ul {
+    margin-left: 20px;
+    display: none;
+}
+
+#Kakao_ul span {
+    display: none;
+}
+
+#Kakao_ul li {
+    height: 30px;
+}

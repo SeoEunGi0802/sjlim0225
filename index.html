@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeoEunGi</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/list_box_style.css">
+    <link rel="stylesheet" href="./css/code_box_style.css">
+    <link rel="icon" href="./img/ico/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <p>Use API curl in PHP</p>
+    </header>
+    <section>
+        <article id="list_box">
+            <div>
+                <ul>
+                    <li id="Naver_li"><span>▶</span> Naver</li>
+                    <ul id="Naver_ul">
+                        <li class="Naver_login"><span>> </span>login</li>
+                        <li class="Naver_callback"><span>> </span>callback</li>
+                        <li class="Naver_get_token"><span>> </span>get token</li>
+                        <li class="Naver_get_profile_info"><span>> </span>get profile info</li>
+                        <li class="Naver_refresh_access_token"><span>> </span>refresh access token</li>
+                        <li class="Naver_delete_access_token"><span>> </span>delete access token</li>
+                    </ul>
+                    <li id="Kakao_li"><span>▶</span> Kakao</li>
+                    <ul id="Kakao_ul">
+                        <li class="Kakao_login"><span>> </span>login</li>
+                        <li class="Kakao_callback"><span>> </span>callback</li>
+                        <li class="Kakao_get_token"><span>> </span>get token</li>
+                        <li class="Kakao_get_profile_info"><span>> </span>get profile info</li>
+                        <li class="Kakao_refresh_access_token"><span>> </span>refresh access token</li>
+                        <li class="Kakao_delete_access_token"><span>> </span>delete access token</li>
+                    </ul>
+                </ul>
+            </div>
+        </article>
+        <article id="code_box">
+            <div id="code_info">
+                <p>리스트에서 원하시는 것을 선택해보세요!</p>
+            </div>
+            <div class="Naver_login">
+                <p>Naver Login Code</p>
+                <br>
+                <p>&lt;?php</p>
+                <p>$client_id = "YOUR_CLIENT_ID";</p>
+                <p>$redirectURI = urlencode("YOUR_CALLBACK_URL");</p>
+                <p>$state = "RAMDOM_STATE";</p>
+                <p>$apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type="</p>
+                <p>$apiURL .= "code&client_id=".$client_id."&redirect_uri=".$redirectURI."&state=".$state;</p>
+                <p>?&gt;</p>
+                <p>&lt;a href="$apiURL"&gt;</p>
+                <p>&lt;img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG" /&gt;</p>
+                <p>&lt;/a&gt;</p>
+            </div>
+
+            <div class="Naver_callback">
+                <p>Naver Callback Code</p>
+                <br>
+                <p>&lt;?php</p>
+                <p>$client_id = "YOUR_CLIENT_ID";</p>
+                <p>$client_secret = "YOUR_CLIENT_SECRET";</p>
+                <p>$code = $_GET["code"];</p>
+                <p>$state = $_GET["state"];</p>
+                <p>$redirectURI = urlencode("YOUR_CALLBACK_URL");</p>
+                <p>$url = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=".$client_id";
+                </p>
+                <p>$url .=
+                    "&client_secret=".$client_secret."&redirect_uri=".$redirectURI."&code=".$code."&state=".$state;</p>
+                <p>$is_post = false;</p>
+                <p>$ch = curl_init();</p>
+                <p>curl_setopt($ch, CURLOPT_URL, $url);</p>
+                <p>curl_setopt($ch, CURLOPT_POST, $is_post);</p>
+                <p>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);</p>
+                <p>$headers = array();</p>
+                <p>$response = curl_exec ($ch);</p>
+                <p>$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);</p>
+                <p>curl_close ($ch);</p>
+                <p>if($status_code == 200) {</p>
+                <p>echo $response;</p>
+                <p>} else {</p>
+                <p>echo "Error 내용:".$response;</p>
+                <p>}</p>
+                <p>?&gt;</p>
+            </div>
+        </article>
+    </section>
+    <script type="text/javascript" src="./js/li_toggle.js"></script>
+    <script type="text/javascript" src="./js/code_box.js"></script>
+</body>
+
+</html>
