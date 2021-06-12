@@ -6,5 +6,5 @@
 -------
 
 ### 2021-06-12
-+ 닷홈 사이트에서 무료 웹 호스팅을 받음
++ 닷홈 사이트에서 무료 웹 호스팅을 받음 [클릭!](http://sjlim0225.dothome.co.kr/)
 + 메인페이지(index.html), css, js(현재까지 jquery만 사용), img(favicon 제작 후 적용)
